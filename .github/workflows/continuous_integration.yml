@@ -1,15 +1,18 @@
 name: remote ssh command
-on: [push]
-jobs:
+on: 
+  push:
+    branches: [ master ]
 
-  build:
-    name: Build
+jobs:
+  job_one:
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: executing remote ssh commands using password
+    - name: executing remote ssh commands using key
       uses: appleboy/ssh-action@master
       with:
         host: github.actions.fabiotest.online
         username: fabio
+        key: ${{ secrets.FABIO_SECRET_KEY }}
         port: 22
         script: whoami
