@@ -15,4 +15,8 @@ jobs:
         username: fabio
         key: ${{ secrets.FABIO_SECRET_KEY }}
         port: 22
-        script: pwd
+        script: |
+          cd Github_Actions
+          git pull origin master
+          sudo cp index.html /var/www/html/index.nginx-debian.html
+          sudo systemctl restart nginx
