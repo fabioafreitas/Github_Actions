@@ -4,7 +4,6 @@ jobs:
 
   build:
     name: Build
-    runs-on: debian-9
     steps:
     - name: executing remote ssh commands using password
       uses: appleboy/ssh-action@master
