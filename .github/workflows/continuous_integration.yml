@@ -15,4 +15,4 @@ jobs:
         username: fabio
         key: ${{ secrets.FABIO_SECRET_KEY }}
         port: 22
-        script: whoami
+        script: pwd
